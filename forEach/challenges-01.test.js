@@ -51,8 +51,15 @@ const addBonusPoints = (arr) => {
 // ------------------------------------------------------------------------------------------------
 
 const addCurve = (arr) => {
-  // Solution code here...
-}
+  const scoreCurve = [];
+
+  for (let i in arr) {
+    arr[i] *= 1.05;
+    scoreCurve.push(arr[i]);
+  }
+
+  return scoreCurve;
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 4
