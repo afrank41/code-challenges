@@ -30,8 +30,15 @@ const pushIntoSecond = (arr) => {
 // ------------------------------------------------------------------------------------------------
 
 const addBonusPoints = (arr) => {
-  // Solution code here...
-}
+  const scoreBonus = [];
+
+  for (let score of arr) {
+    score += 5;
+    scoreBonus.push(score);
+  }
+
+  return scoreBonus;
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 3
