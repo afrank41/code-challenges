@@ -95,13 +95,15 @@ const speaker = (message, callback) => {
 // ------------------------------------------------------------------------------------------------
 
 const addValues = (arr, value) => {
-  for (let i in arr) {
-    arr.push(arr[i] += value);
-  };
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  callback(arr, num);
+  for (let i = 0; i < times; i++) {
+    callback(arr, num);
+  };
+
+  return arr;
 };
 
 // ------------------------------------------------------------------------------------------------
