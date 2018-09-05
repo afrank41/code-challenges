@@ -141,9 +141,12 @@ const removeElements = (input, callback) => {
 // ------------------------------------------------------------------------------------------------
 
 const removeWithForEach = (input, callback) => {
-  // Solution code here...
-}
+  input.forEach((item) => {
+    callback(item, input);
+  });
 
+  return input;
+};
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 8
 //
