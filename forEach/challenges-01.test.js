@@ -147,6 +147,7 @@ const removeWithForEach = (input, callback) => {
 
   return input;
 };
+
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 8
 //
@@ -159,8 +160,14 @@ const removeWithForEach = (input, callback) => {
 // ------------------------------------------------------------------------------------------------
 
 const removeWithAnon = (input) => {
-  // Solution code here...
-}
+  input.forEach((el, i, arr) => {
+    if (el % 3 === 2) {
+      arr.pop();
+    };
+  });
+ 
+  return input;
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 9
@@ -181,7 +188,14 @@ const removeWithAnon = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const createList = (availableItems) => {
-  // Solution code here...
+  let inventory = [];
+  availableItems.forEach((el) => {
+    if (el.available) {
+      inventory.push(el.name);
+    }
+  });
+
+  return inventory;
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -199,8 +213,21 @@ const createList = (availableItems) => {
 // ------------------------------------------------------------------------------------------------
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
-}
+  let array = [];
+  arr.forEach((el) => {
+    if(el % 5 === 0 && el % 3 === 0) {
+      array.push('Fizz Buzz');
+    } else if (el % 5 === 0) {
+      array.push('Buzz');
+    } else if (el % 3 === 0) {
+      array.push('Fizz');
+    } else {
+      array.push(el);
+    }
+  });
+
+  return array;
+};
 
 // ------------------------------------------------------------------------------------------------
 // TESTS
