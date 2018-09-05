@@ -95,12 +95,14 @@ const speaker = (message, callback) => {
 // ------------------------------------------------------------------------------------------------
 
 const addValues = (arr, value) => {
-  // Solution code here...
-}
+  for (let i in arr) {
+    arr.push(arr[i] += value);
+  };
+};
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
-}
+  callback(arr, num);
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 6
