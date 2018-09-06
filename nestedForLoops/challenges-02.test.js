@@ -77,7 +77,15 @@ const salesData = (data) => {
 // ------------------------------------------------------------------------------------------------
 
 const giveValentines = (list) => {
-  // Solution code here...
+  let messages = [];
+  for (let person of list) {
+    for (let i in list) {
+      if (person !== list[i]) {
+        messages.push(`${person} gives a Valentine to ${list[i]}.`);
+      }
+    }
+  }
+  return messages;
 };
 
 // ------------------------------------------------------------------------------------------------
