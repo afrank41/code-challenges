@@ -51,7 +51,11 @@ const howManyTreats = (arr) => arr[2].items[1].quantity;
 // ------------------------------------------------------------------------------------------------
 
 const battleship = (board, row, col) => {
-  // Solution code here...
+  if (board[row][col] === '#') {
+    return 'hit';
+  } else {
+    return 'miss';
+  }
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -65,7 +69,14 @@ const battleship = (board, row, col) => {
 // ------------------------------------------------------------------------------------------------
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  let product = 1;
+  numbers.forEach((arr) => {
+    for (let num of arr) {
+      product *= num;
+    }
+  });
+
+  return product;
 };
 
 // ------------------------------------------------------------------------------------------------
