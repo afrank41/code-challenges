@@ -97,7 +97,16 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  let monthlyTotal = 0;
+  let numDays = 0;
+  weather.forEach((week) => {
+    for (let day of week) {
+      monthlyTotal += day;
+    }
+  });
+  numDays = weather.length * 7;
+
+  return monthlyTotal / numDays;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -119,7 +128,16 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
+  const lowestDay = [];
+  weather.forEach((week) => {
+    let weeklyTotal = 0;
+    for (let day of week) {
+      weeklyTotal += day;
+    }
+    lowestDay.push(weeklyTotal / 7);
+  });
+
+  return Math.min(...lowestDay);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -148,9 +166,20 @@ const lowestWeeklyAverage = (weather) => {
 // ------------------------------------------------------------------------------------------------
 
 const excel = (str) => {
-  // Solution code here...
-};
+  const sumArr = [];
+  let strArr = str.split('\n');
 
+  strArr.forEach((arr) => {
+    let sum = 0;
+    arr.split(',');
+    for (let num of arr) {
+      sum += parseInt(num);
+    }
+    sumArr.push(sum);
+  });
+
+  return sumArr;
+};
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 8
 //
