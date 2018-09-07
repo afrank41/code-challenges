@@ -171,15 +171,17 @@ const excel = (str) => {
 
   strArr.forEach((arr) => {
     let sum = 0;
-    arr.split(',');
-    for (let num of arr) {
-      sum += parseInt(num);
+    let row = arr.split(',');
+    for (let num of row) {
+      num = parseInt(num);
+      sum += num;
     }
     sumArr.push(sum);
   });
 
   return sumArr;
 };
+
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 8
 //
