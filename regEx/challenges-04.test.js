@@ -41,7 +41,9 @@ const isCapitalized = (string) => {
 // ------------------------------------------------------------------------------------------------
 
 const citiesAtoJ = (cities) => {
-  // Solution code here...
+  let regex = /[A-J]\w*/g;
+  let cityString = cities.join();
+  return cityString.match(regex);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -57,7 +59,8 @@ const citiesAtoJ = (cities) => {
 // ------------------------------------------------------------------------------------------------
 
 const matchMonth = (input) => {
-  // Solution code here...
+  let regex = /\boct/i;
+  return regex.test(input);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -74,7 +77,8 @@ const matchMonth = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const noPunctuation = input => {
-  // Solution code here...
+  let regex = /[a-z]\w*\s/ig;
+  return input.match(regex);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -91,7 +95,8 @@ const noPunctuation = input => {
 // ------------------------------------------------------------------------------------------------
 
 let hangman = (str) => {
-  // Solution code here...
+  let regex = /[aeiou]/ig
+  return str.replace(regex, '_');
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -107,7 +112,8 @@ let hangman = (str) => {
 const seashells = 'She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I\'m sure she sells seashore shells.';
 
 const findShells = (phrase) => {
-  // Solution code here...
+  let regex = /\w*ells\b/g;
+  return phrase.match(regex);
 };
 
 // ------------------------------------------------------------------------------------------------
