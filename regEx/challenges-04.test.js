@@ -62,8 +62,13 @@ const citiesAtoJ = (cities) => {
 // ------------------------------------------------------------------------------------------------
 
 const matchMonth = (input) => {
-  let regex = /\boct/i;
-  return regex.test(input);
+  let regex = /[Oo]ct/;
+
+  if (input.length === 3 || input.length === 7){
+    return regex.test(input);
+  } else {
+    return false;
+  }
 };
 
 // ------------------------------------------------------------------------------------------------
