@@ -42,7 +42,10 @@ const isCapitalized = (string) => {
 
 const citiesAtoJ = (cities) => {
   let regex = /[A-J]\w*/g;
-  let cityString = cities.join();
+  let extraWords = /\w*\s[A-Z]\w*/g;
+
+  let cityString = cities.join().replace(extraWords, '');
+
   return cityString.match(regex);
 };
 
