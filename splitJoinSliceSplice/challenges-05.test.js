@@ -103,8 +103,11 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
 
-  for (let item of gruffaloCrumble.ingredients) {
-    result.push(item.split(' ').slice(2).join(' '));
+  for (let item of recipe.ingredients) {
+    let firstSpaceIndex = item.indexOf(' ');
+    let itemIndex = item.indexOf(' ', (firstSpaceIndex + 1));
+
+    result.push(item.slice(itemIndex + 1));
   }
 
   return result;
@@ -123,7 +126,7 @@ const listFoods = (recipe) => {
 
 const stepActions = (recipe) => {
   let result = [];
-  
+
   for (let step of gruffaloCrumble.steps) {
     result.push(step.split(' ')[0]);
   }
@@ -140,9 +143,13 @@ const stepActions = (recipe) => {
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+
+  for (let item of recipe.ingredients) {
+    result.push(item.split(' ').slice(2).join(' '));
+  }
+
   return result;
-}
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 7
