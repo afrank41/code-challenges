@@ -190,7 +190,9 @@ const removeEvenValues = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  let newString = str.slice(0, (str.length - numberOfCharacters));
+  
+  return newString;
 };
 
 // ------------------------------------------------------------------------------------------------
