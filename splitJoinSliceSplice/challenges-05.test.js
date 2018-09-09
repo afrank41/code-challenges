@@ -191,7 +191,7 @@ const removeEvenValues = (input) => {
 
 const removeLastCharacters = (str, numberOfCharacters) => {
   let newString = str.slice(0, (str.length - numberOfCharacters));
-  
+
   return newString;
 };
 
@@ -205,7 +205,20 @@ const removeLastCharacters = (str, numberOfCharacters) => {
 // ------------------------------------------------------------------------------------------------
 
 const removeVowels = (input) => {
-  // Solution code here...
+  let regex = /[aeiou]/;
+  let newString;
+  let splitInput = input.split('');
+
+  for (let char of splitInput) {
+    if (!regex.test(char)) {
+      if(!newString) {
+        newString = char;
+      } else {
+        newString += char;
+      }
+    }
+  }
+  return newString;
 };
 
 // ------------------------------------------------------------------------------------------------
