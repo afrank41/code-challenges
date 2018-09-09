@@ -233,7 +233,28 @@ const removeVowels = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const extractVowels = (input) => {
-  // Solution code here...
+  let regex = /[aeiou]/;
+  let cons;
+  let vowels = [];
+  let extractedVowels = [];
+  let splitInput = input.split('');
+
+  for (let char of splitInput) {
+    if (!regex.test(char)) {
+      if(!cons) {
+        cons = char;
+      } else {
+        cons += char;
+      }
+    } else {
+      vowels.push(char);
+    }
+  }
+
+  extractedVowels.push(cons);
+  extractedVowels.push(vowels.sort().join(''));
+
+  return extractedVowels;
 };
 
 // ------------------------------------------------------------------------------------------------
