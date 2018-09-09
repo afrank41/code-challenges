@@ -32,7 +32,12 @@ const howMuchPencil = (name) => {
 // ------------------------------------------------------------------------------------------------
 
 const wordsToCharList = (input) => {
-  // Solution code here...
+  const arr = [];
+  for (let i = 0; i < input.length; i++) {
+    arr.push(input[i]);
+  }
+
+  return arr;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -44,7 +49,12 @@ const wordsToCharList = (input) => {
 
 const totalSumCSV = (input) => {
   let total = 0;
-  // Solution code here...
+  let numList = input.split(',');
+
+  for (let num of numList) {
+    total += parseInt(num);
+  }
+
   return total;
 };
 
@@ -92,7 +102,11 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+
+  for (let item of gruffaloCrumble.ingredients) {
+    result.push(item.split(' ').slice(2).join(' '));
+  }
+
   return result;
 }
 
@@ -109,7 +123,11 @@ const listFoods = (recipe) => {
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  
+  for (let step of gruffaloCrumble.steps) {
+    result.push(step.split(' ')[0]);
+  }
+
   return result;
 }
 
