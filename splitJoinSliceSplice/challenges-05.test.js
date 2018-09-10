@@ -111,7 +111,7 @@ const listFoods = (recipe) => {
   }
 
   return result;
-}
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 5
@@ -206,16 +206,12 @@ const removeLastCharacters = (str, numberOfCharacters) => {
 
 const removeVowels = (input) => {
   let regex = /[aeiou]/;
-  let newString;
+  let newString = '';
   let splitInput = input.split('');
 
   for (let char of splitInput) {
     if (!regex.test(char)) {
-      if(!newString) {
-        newString = char;
-      } else {
-        newString += char;
-      }
+      newString += char;
     }
   }
   return newString;
@@ -234,18 +230,14 @@ const removeVowels = (input) => {
 
 const extractVowels = (input) => {
   let regex = /[aeiou]/;
-  let cons;
+  let cons = '';
   let vowels = [];
   let extractedVowels = [];
   let splitInput = input.split('');
 
   for (let char of splitInput) {
     if (!regex.test(char)) {
-      if(!cons) {
-        cons = char;
-      } else {
-        cons += char;
-      }
+      cons += char;
     } else {
       vowels.push(char);
     }
