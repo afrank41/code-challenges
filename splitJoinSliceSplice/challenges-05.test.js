@@ -16,7 +16,9 @@
 
 const howMuchPencil = (name) => {
   let result = [];
-  // Solution code here...
+  for (let i = 0; i <= name.length; i++) {
+    result.push(name.slice(i));
+  }
   return result;
 };
 
@@ -30,7 +32,12 @@ const howMuchPencil = (name) => {
 // ------------------------------------------------------------------------------------------------
 
 const wordsToCharList = (input) => {
-  // Solution code here...
+  const arr = [];
+  for (let i = 0; i < input.length; i++) {
+    arr.push(input[i]);
+  }
+
+  return arr;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -42,7 +49,12 @@ const wordsToCharList = (input) => {
 
 const totalSumCSV = (input) => {
   let total = 0;
-  // Solution code here...
+  let numList = input.split(',');
+
+  for (let num of numList) {
+    total += parseInt(num);
+  }
+
   return total;
 };
 
@@ -90,9 +102,16 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+
+  for (let item of recipe.ingredients) {
+    let firstSpaceIndex = item.indexOf(' ');
+    let itemIndex = item.indexOf(' ', (firstSpaceIndex + 1));
+
+    result.push(item.slice(itemIndex + 1));
+  }
+
   return result;
-}
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 5
@@ -107,7 +126,11 @@ const listFoods = (recipe) => {
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+
+  for (let step of gruffaloCrumble.steps) {
+    result.push(step.split(' ')[0]);
+  }
+
   return result;
 }
 
@@ -120,9 +143,13 @@ const stepActions = (recipe) => {
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+
+  for (let item of recipe.ingredients) {
+    result.push(item.split(' ').slice(2).join(' '));
+  }
+
   return result;
-}
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 7
@@ -138,7 +165,14 @@ const splitFoods = (recipe) => {
 // ------------------------------------------------------------------------------------------------
 
 const removeEvenValues = (input) => {
-  // Solution code here...
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] % 2 === 0) {
+      input.splice(i, 1);
+      i--;
+    }
+  };
+
+  return input;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -156,7 +190,9 @@ const removeEvenValues = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  let newString = str.slice(0, (str.length - numberOfCharacters));
+
+  return newString;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -169,7 +205,16 @@ const removeLastCharacters = (str, numberOfCharacters) => {
 // ------------------------------------------------------------------------------------------------
 
 const removeVowels = (input) => {
-  // Solution code here...
+  let regex = /[aeiou]/;
+  let newString = '';
+  let splitInput = input.split('');
+
+  for (let char of splitInput) {
+    if (!regex.test(char)) {
+      newString += char;
+    }
+  }
+  return newString;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -184,7 +229,24 @@ const removeVowels = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const extractVowels = (input) => {
-  // Solution code here...
+  let regex = /[aeiou]/;
+  let cons = '';
+  let vowels = [];
+  let extractedVowels = [];
+  let splitInput = input.split('');
+
+  for (let char of splitInput) {
+    if (!regex.test(char)) {
+      cons += char;
+    } else {
+      vowels.push(char);
+    }
+  }
+
+  extractedVowels.push(cons);
+  extractedVowels.push(vowels.sort().join(''));
+
+  return extractedVowels;
 };
 
 // ------------------------------------------------------------------------------------------------
