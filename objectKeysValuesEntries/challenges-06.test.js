@@ -47,9 +47,7 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true };
 
-const getFrom = (obj, property) => {
-  return Object[property](obj);
-}
+const getFrom = (obj, property) => Object[property](obj);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 5
@@ -105,15 +103,7 @@ let characters = [
   }
 ]
 
-const totalCharacters = (arr) => {
-  const names = [];
-
-  arr.forEach((obj) => {
-    names.push(getFrom(obj, 'values')[0]);
-  });
-
-  return names.length;
-};
+const totalCharacters = (arr) => getFrom(arr, 'values').length;
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 6
