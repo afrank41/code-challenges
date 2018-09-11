@@ -140,8 +140,18 @@ const getHouses = (arr) => {
 // ------------------------------------------------------------------------------------------------
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-}
+  let people = getFrom(arr, 'values');
+
+  for (let person of people) {
+    if (person.name === character) {
+      if (person.children.length > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 8
