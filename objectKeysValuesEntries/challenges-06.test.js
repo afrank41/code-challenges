@@ -48,7 +48,7 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
   finalExam: true };
 
 const getFrom = (obj, property) => {
-  // Solution code here...
+  return Object[property](obj);
 }
 
 // ------------------------------------------------------------------------------------------------
