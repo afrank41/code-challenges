@@ -178,13 +178,11 @@ const houseSize = (arr) => {
   let people = getFrom(arr, 'values');
 
   for (let person of people) {
-    let house = {};
-    house.house = person.house;
-    house.members = person.name[0].length + person.children.length;
+    let members = person.children.length + 1;
     if (person.spouse) {
-      house.members += 1;
+      members += 1;
     }
-    houses.push(house);
+    houses.push({house: person.house, members: members,});
   }
 
   return houses;
@@ -209,18 +207,16 @@ const houseSurvivors = (arr) => {
   let people = getFrom(arr, 'values');
 
   for (let person of people) {
-    let house = {};
-    house.house = person.house;
-    house.members = person.name[0].length + person.children.length;
+    let members = person.children.length + 1;
     if (person.spouse) {
-      house.members += 1;
+      members += 1;
       for (let spouse of deceasedSpouses) {
         if (spouse === person.spouse) {
-          house.members -= 1;
+          members -= 1;
         }
       }
     }
-    houses.push(house);
+    houses.push({house: person.house, members: members,});
   };
   return houses;
 };
