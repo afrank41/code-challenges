@@ -184,8 +184,21 @@ const hasChildrenEntries = (arr, character) => {
 // ------------------------------------------------------------------------------------------------
 
 const houseSize = (arr) => {
-  // Solution code here...
-}
+  let houses = [];
+  let people = getFrom(arr, 'values');
+
+  for (let person of people) {
+    let house = {};
+    house.house = person.house;
+    house.members = person.name[0].length + person.children.length;
+    if (person.spouse) {
+      house.members += 1;
+    }
+    houses.push(house);
+  }
+
+  return houses;
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 10
@@ -202,8 +215,25 @@ const houseSize = (arr) => {
 const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 
 const houseSurvivors = (arr) => {
-  // Solution code here...
-}
+  let houses = [];
+  let people = getFrom(arr, 'values');
+
+  for (let person of people) {
+    let house = {};
+    house.house = person.house;
+    house.members = person.name[0].length + person.children.length;
+    if (person.spouse) {
+      house.members += 1;
+      for (let spouse of deceasedSpouses) {
+        if (spouse === person.spouse) {
+          house.members -= 1;
+        }
+      }
+    }
+    houses.push(house);
+  };
+  return houses;
+};
 
 // ------------------------------------------------------------------------------------------------
 // TESTS
