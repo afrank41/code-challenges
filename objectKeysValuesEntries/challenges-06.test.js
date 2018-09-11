@@ -162,8 +162,18 @@ const hasChildrenValues = (arr, character) => {
 // ------------------------------------------------------------------------------------------------
 
 const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
-}
+  let people = getFrom(arr, 'entries');
+
+  for (let i in people) {
+    if (people[i][1].name === character) {
+      if (people[i][1].children.length > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 9
