@@ -106,8 +106,14 @@ let characters = [
 ]
 
 const totalCharacters = (arr) => {
-  // Solution code here...
-}
+  const names = [];
+
+  arr.forEach((obj) => {
+    names.push(getFrom(obj, 'values')[0]);
+  });
+
+  return names.length;
+};
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 6
@@ -117,7 +123,13 @@ const totalCharacters = (arr) => {
 // ------------------------------------------------------------------------------------------------
 
 const getHouses = (arr) => {
-  // Solution code here...
+  const houses = [];
+
+  arr.forEach((obj) => {
+    houses.push(getFrom(obj, 'values')[3]);
+  });
+
+  return houses;
 }
 
 // ------------------------------------------------------------------------------------------------
