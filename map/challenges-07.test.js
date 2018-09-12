@@ -13,7 +13,12 @@
 // ------------------------------------------------------------------------------------------------
 
 const forLoopTwoToThe = (input) => {
-  // Solution code here...
+  const answer = [];
+  for (let num of input) {
+    answer.push(Math.pow(2, num));
+  }
+
+  return answer;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -24,7 +29,12 @@ const forLoopTwoToThe = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const forEachTwoToThe = (input) => {
-  // Solution code here...
+  const answer = [];
+  input.forEach(num => {
+    answer.push(Math.pow(2, num));
+  });
+
+  return answer;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -35,9 +45,7 @@ const forEachTwoToThe = (input) => {
 // instead of a for loop or forEach.
 // ------------------------------------------------------------------------------------------------
 
-const mapTwoToThe = (input) => {
-  // Solution code here...
-}
+const mapTwoToThe = (input) => input.map(num => Math.pow(2, num));
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 4
