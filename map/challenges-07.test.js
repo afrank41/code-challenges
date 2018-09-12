@@ -13,7 +13,12 @@
 // ------------------------------------------------------------------------------------------------
 
 const forLoopTwoToThe = (input) => {
-  // Solution code here...
+  const answer = [];
+  for (let num of input) {
+    answer.push(Math.pow(2, num));
+  }
+
+  return answer;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -24,7 +29,12 @@ const forLoopTwoToThe = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const forEachTwoToThe = (input) => {
-  // Solution code here...
+  const answer = [];
+  input.forEach(num => {
+    answer.push(Math.pow(2, num));
+  });
+
+  return answer;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -35,9 +45,7 @@ const forEachTwoToThe = (input) => {
 // instead of a for loop or forEach.
 // ------------------------------------------------------------------------------------------------
 
-const mapTwoToThe = (input) => {
-  // Solution code here...
-}
+const mapTwoToThe = (input) => input.map(num => Math.pow(2, num));
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 4
@@ -50,9 +58,7 @@ const mapTwoToThe = (input) => {
 // For example: charCode(['h','i']) returns [104, 105].
 // ------------------------------------------------------------------------------------------------
 
-const charCode = (input) => {
-  // Solution code here...
-};
+const charCode = (input) => input.map(char => char.charCodeAt());
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 5
@@ -65,9 +71,7 @@ const charCode = (input) => {
 // For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 // ------------------------------------------------------------------------------------------------
 
-const evenOdd = (input) => {
-  // Solution code here...
-};
+const evenOdd = (input) => input.map(num => isNaN(num) ? 'N/A' : (num % 2 === 0 ? 'even' : 'odd'));
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 6
@@ -109,9 +113,7 @@ const snorlaxAbilities = {
   weight: 4600,
 };
 
-const extractAbilities = (abilities) => {
-  // Solution code here...
-};
+const extractAbilities = (abilities) => abilities.map(move => move.ability.name);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 7
@@ -156,9 +158,7 @@ const snorlaxStats = {
   weight: 4600,
 };
 
-const extractStats = (stats) => {
-  // Solution code here...
-};
+const extractStats = (stats) => stats.map(val => ({name: val.stat.name, total: val.effort + val.baseStat,}));
 
 // ------------------------------------------------------------------------------------------------
 // TESTS
