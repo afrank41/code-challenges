@@ -58,9 +58,7 @@ const mapTwoToThe = (input) => input.map(num => Math.pow(2, num));
 // For example: charCode(['h','i']) returns [104, 105].
 // ------------------------------------------------------------------------------------------------
 
-const charCode = (input) => {
-  // Solution code here...
-};
+const charCode = (input) => input.map(char => char.charCodeAt());
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 5
