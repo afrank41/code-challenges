@@ -136,9 +136,7 @@ const extractChildren = input => input.filter(ele => /a/.test(ele.name)).reduce(
 // Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 // ------------------------------------------------------------------------------------------------
 
-const reversedString = (input) => {
-  // Solution code here...
-};
+const reversedString = (input) => input.split('').reduce((ans, x) => x + ans);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 7
