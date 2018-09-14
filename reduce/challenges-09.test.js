@@ -125,10 +125,7 @@ const calculateAverage = (input) => input.reduce((ans, x) => ans = ans + x, 0) /
 //
 // ------------------------------------------------------------------------------------------------
 
-const extractChildren = input => input.filter(ele => /a/.test(ele.name)).reduce((ans, x) => {
-  ans.push(x.children);
-  return ans;
-}, []);
+const extractChildren = input => input.filter(ele => /a/.test(ele.name)).reduce((ans, x) => x.children ? ans.concat(x.children) : ans, []);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 6
