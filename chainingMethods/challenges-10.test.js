@@ -12,9 +12,7 @@
 // For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 // ------------------------------------------------------------------------------------------------
 
-const count = (target, input) => {
-  // Solution code here...
-};
+const count = (target, input) => input.reduce((ans, x) => x.includes(target) ? ans.concat(x) : ans, []).filter(num => num === target).length;
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 2
@@ -25,9 +23,7 @@ const count = (target, input) => {
 // Note: You might need to use the same method more than once.
 // ------------------------------------------------------------------------------------------------
 
-const totalSum = (input) => {
-  // Solution code here...
-};
+const totalSum = (input) => input.reduce((ans, x) => ans.concat(x), []).reduce((ans, x) => ans + x, 0);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 3
@@ -104,23 +100,30 @@ let starWarsData = [{
   eye_color: 'brown',
   birth_year: '19BBY',
   gender: 'female'
-}]
-
-let findMaleAndFemale = (data) => {
-  // Solution code here...
+},
+{
+  name: 'R2-D2',
+  height: '96',
+  mass: '32',
+  hair_color: 'n/a',
+  skin_color: 'white, blue',
+  eye_color: 'red',
+  birth_year: '33BBY',
+  gender: 'n/a'
 }
+];
+
+let findMaleAndFemale = (data) => data.filter(obj => /^male|female$/.test(obj.gender)).map(obj => obj.name).join(' and ');
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 5
 
-// Write a function named findShortest that, given the Star Wars data from challenge 6,
+// Write a function named findShortest that, given the Star Wars data from challenge 4,
 // uses any combination of filter, map and reduce to return the name of the shortest character.
 //
 // ------------------------------------------------------------------------------------------------
 
-let findShortest = (data) => {
-  // Solution code here...
-}
+let findShortest = (data) => (data.reduce((ans, x) => x.height <= ans.height ? ans = x : ans)).name;
 
 // ------------------------------------------------------------------------------------------------
 // TESTS
