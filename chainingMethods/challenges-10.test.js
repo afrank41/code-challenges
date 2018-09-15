@@ -113,7 +113,7 @@ let findMaleAndFemale = (data) => data.filter(obj => /^male|female$/.test(obj.ge
 //
 // ------------------------------------------------------------------------------------------------
 
-let findShortest = (data) => (data.reduce((ans, x) => x.height <= ans.height ? ans = x : ans)).name;
+let findShortest = (data) => (data.reduce((ans, x) => parseInt(x.height) < parseInt(ans.height) ? ans = x : ans)).name;
 
 // ------------------------------------------------------------------------------------------------
 // TESTS
