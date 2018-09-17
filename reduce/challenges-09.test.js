@@ -9,9 +9,7 @@
 // Note: You may not use the array's built-in length property.
 // ------------------------------------------------------------------------------------------------
 
-const countNumberOfElements = (input) => {
-  // Solution code here...
-};
+const countNumberOfElements = (input) => input.reduce(ans => ans += 1, 0);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 2
@@ -64,9 +62,7 @@ const characters = [
   },
 ];
 
-const countNumberOfChildren = (input) => {
-  // Solution code here...
-};
+const countNumberOfChildren = (input) => input.reduce((ans, ele)  => ele.children ? ans += ele.children.length : ans, 0);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 3
@@ -108,9 +104,7 @@ const snorlaxData = {
   weight: 4600,
 };
 
-const extractStat = (statName, input) => {
-  // Solution code here...
-};
+const extractStat = (statName, input) => input.reduce( (ans, x) => x.name === statName ? ans = x.stat.name : ans);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 4
@@ -119,9 +113,7 @@ const extractStat = (statName, input) => {
 // calculate the array's average value.
 // ------------------------------------------------------------------------------------------------
 
-const calculateAverage = (input) => {
-  // Solution code here...
-};
+const calculateAverage = (input) => input.reduce((ans, x) => ans = ans + x, 0) / input.length;
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 5
@@ -133,9 +125,7 @@ const calculateAverage = (input) => {
 //
 // ------------------------------------------------------------------------------------------------
 
-const extractChildren = input => {
-  // Solution code here...
-};
+const extractChildren = input => input.filter(ele => /a/.test(ele.name)).reduce((ans, x) => x.children ? ans.concat(x.children) : ans, []);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 6
@@ -146,9 +136,7 @@ const extractChildren = input => {
 // Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 // ------------------------------------------------------------------------------------------------
 
-const reversedString = (input) => {
-  // Solution code here...
-};
+const reversedString = (input) => input.split('').reduce((ans, x) => x + ans);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 7
