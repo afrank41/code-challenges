@@ -8,9 +8,7 @@
 // If the PIN is four numerical digits long, return true. Otherwise, return false.
 // ------------------------------------------------------------------------------------------------
 
-const validatePin = (pin) => {
-  // Solution code here...
-};
+const validatePin = (pin) => /^\d{4}$/.test(pin);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 2
@@ -23,9 +21,7 @@ const validatePin = (pin) => {
 // returns ['/h1', '/div', '/p'].
 // ------------------------------------------------------------------------------------------------
 
-const findTagNames = elements => {
-  // Solution code here...
-}
+const findTagNames = elements => elements.join('').match(/\/\w*/g);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 3
@@ -44,9 +40,7 @@ const findTagNames = elements => {
 // regex you should use. It's many many lines long.
 // ------------------------------------------------------------------------------------------------
 
-const validateEmail = (email) => {
-  // Solution code here...
-};
+const validateEmail = (email) => /^(\w+)(\.\w+)?@\w+\.net|com|org$/.test(email);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 4
@@ -69,9 +63,7 @@ const validateEmail = (email) => {
 // Return either true or false.
 // ------------------------------------------------------------------------------------------------
 
-const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
-};
+const validatePhoneNumber = (phoneNumber) => /^\(?\d{3}\)?-?\s?\d{3}\)?-?\s?\d{4}$/.test(phoneNumber);
 
 
 // ------------------------------------------------------------------------------------------------
