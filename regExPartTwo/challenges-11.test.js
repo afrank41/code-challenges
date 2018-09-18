@@ -40,7 +40,7 @@ const findTagNames = elements => elements.join('').match(/\/\w+/g);
 // regex you should use. It's many many lines long.
 // ------------------------------------------------------------------------------------------------
 
-const validateEmail = (email) => /^(\w+\.)?\w+@\w+\.(net|com|org)$/.test(email);
+const validateEmail = (email) => /^([A-Za-z0-9]+\.)?[A-Za-z0-9]+@[A-Za-z0-9]+\.(net|com|org)$/.test(email);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 4
