@@ -21,7 +21,7 @@ const validatePin = (pin) => /^\d{4}$/.test(pin);
 // returns ['/h1', '/div', '/p'].
 // ------------------------------------------------------------------------------------------------
 
-const findTagNames = elements => elements.join('').match(/\/\w*/g);
+const findTagNames = elements => elements.join('').match(/\/\w+/g);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 3
@@ -40,7 +40,7 @@ const findTagNames = elements => elements.join('').match(/\/\w*/g);
 // regex you should use. It's many many lines long.
 // ------------------------------------------------------------------------------------------------
 
-const validateEmail = (email) => /^(\w+)(\.\w+)?@\w+\.net|com|org$/.test(email);
+const validateEmail = (email) => /^\w+\.?\w+@\w+\.(net|com|org)$/.test(email);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 4
