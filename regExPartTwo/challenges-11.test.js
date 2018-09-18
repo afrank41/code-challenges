@@ -63,7 +63,7 @@ const validateEmail = (email) => /^([A-Za-z0-9]+\.)?[A-Za-z0-9]+@[A-Za-z0-9]+\.(
 // Return either true or false.
 // ------------------------------------------------------------------------------------------------
 
-const validatePhoneNumber = (phoneNumber) => /^\(?\d{3}\)?-?\s?\d{3}\)?-?\s?\d{4}$/.test(phoneNumber);
+const validatePhoneNumber = (phoneNumber) => /^(\(?\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$/.test(phoneNumber);
 
 
 // ------------------------------------------------------------------------------------------------
