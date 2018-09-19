@@ -148,13 +148,13 @@ const sortMeetingsByDay = (meetings) => meetings.sort((a, b) => orderedDays.inde
 // on the same day, the shorter meeting should come first.
 // ------------------------------------------------------------------------------------------------
 
-const sortSchedule = (meetings) => meetings.sort((a, b) => orderedDays.indexOf(a.dayOfWeek) > orderedDays.indexOf(b.dayOfWeek))
-  .sort((a, b) => {
-    if (a.start === b.start) {
-      return (a.start - a.end) - (b.start - b.end);
-    }
-    return a.start > b.start;
-  });
+const sortSchedule = (meetings) => meetings.sort((a, b) => {
+  if (a.dayOfWeek === b.dayOfWeek) {
+    return (a.end - a.start) > (b.end - b.start);
+  } else {
+    return orderedDays.indexOf(a.dayOfWeek) > orderedDays.indexOf(b.dayOfWeek);
+  }
+});
 
 // ------------------------------------------------------------------------------------------------
 // TESTS
