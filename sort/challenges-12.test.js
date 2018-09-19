@@ -7,9 +7,7 @@
 // with the numbers sorted, highest to smallest.
 // ------------------------------------------------------------------------------------------------
 
-const sortBackwards = (nums) => {
-  // Solution code here...
-};
+const sortBackwards = (nums) => nums.sort( (a, b) => b - a);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 2
@@ -21,9 +19,7 @@ const sortBackwards = (nums) => {
 // For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 // ------------------------------------------------------------------------------------------------
 
-const alphabetize = (strings) => {
-  // Solution code here...
-};
+const alphabetize = (strings) => strings.sort();
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 3
@@ -32,9 +28,7 @@ const alphabetize = (strings) => {
 // with the strings sorted by their length, lowest to highest.
 // ------------------------------------------------------------------------------------------------
 
-const sortByLength = (strings) => {
-  // Solution code here...
-};
+const sortByLength = (strings) => strings.sort((a, b) => a.length - b.length);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 4
@@ -45,9 +39,7 @@ const sortByLength = (strings) => {
 // and so is ['alphabet', 'Alphabet', 'carrot', 'Zebra'].
 // ------------------------------------------------------------------------------------------------
 
-const alphabetizeBetter = (strs) => {
-  // Solution code here...
-};
+const alphabetizeBetter = (strs) => strs.sort((a, b) => a.toLowerCase() > b.toLowerCase());
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 5
@@ -63,9 +55,7 @@ const alphabetizeBetter = (strs) => {
 // ];
 // ------------------------------------------------------------------------------------------------
 
-const sortByPrice = (objs) => {
-  // Solution code here...
-};
+const sortByPrice = (objs) => objs.sort((a, b) => a.price > b.price);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 6
@@ -76,9 +66,7 @@ const sortByPrice = (objs) => {
 // For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 // ------------------------------------------------------------------------------------------------
 
-const sortNumbersByLength = (nums) => {
-  // Solution code here...
-};
+const sortNumbersByLength = (nums) => nums.sort((a, b) => a.toString().length > b.toString().length);
 
 // -----------------------------------------------------------------------------------------------
 // CHALLENGE 7
@@ -100,9 +88,7 @@ const people = [
   new Person('Stan', 'Seattle', 67),
 ];
 
-const sortPeople = (people) => {
-  // Solution code here...
-};
+const sortPeople = (people) => people.sort((a, b) => a.lastName > b.lastName);
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 8
@@ -115,9 +101,15 @@ const sortPeople = (people) => {
 // (Do not worry about capitalization.)
 // ------------------------------------------------------------------------------------------------
 
-const sortPeopleBetter = (people) => {
-  // Solution code here...
-};
+const sortPeopleBetter = (people) => people.sort((a, b) => {
+  if (a.lastName === b.lastName && a.firstName === b.firstName) {
+    return a.age > b.age;
+  } else if (a.lastName === b.lastName) {
+    return a.firstName > b.firstName;
+  } else {
+    return a.lastName > b.lastName;
+  }
+});
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 9
@@ -141,12 +133,11 @@ const meetings = [
   new Meeting('Tuesday', '1145', '1315'),
   new Meeting('Wednesday', '0930', '1000'),
   new Meeting('Monday', '0900', '0945'),
-  new Meeting('Friday', '1200', '1345'),
+  new Meeting('Friday', '1200', '1345')
 ];
 
-const sortMeetingsByDay = (meetings) => {
-  // Solution code here...
-};
+const orderedDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+const sortMeetingsByDay = (meetings) => meetings.sort((a, b) => orderedDays.indexOf(a.dayOfWeek) > orderedDays.indexOf(b.dayOfWeek));
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 10
@@ -157,9 +148,13 @@ const sortMeetingsByDay = (meetings) => {
 // on the same day, the shorter meeting should come first.
 // ------------------------------------------------------------------------------------------------
 
-const sortSchedule = (meetings) => {
-  // Solution code here...
-};
+const sortSchedule = (meetings) => meetings.sort((a, b) => {
+  if (a.dayOfWeek === b.dayOfWeek) {
+    return (a.end - a.start) > (b.end - b.start);
+  } else {
+    return orderedDays.indexOf(a.dayOfWeek) > orderedDays.indexOf(b.dayOfWeek);
+  }
+});
 
 // ------------------------------------------------------------------------------------------------
 // TESTS
