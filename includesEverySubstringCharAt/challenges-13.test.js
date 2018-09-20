@@ -39,7 +39,15 @@ const standardizePhoneNumbers = (phoneNumbers) => phoneNumbers.map(str => str.su
 // ------------------------------------------------------------------------------------------------
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  let answer = '';
+
+  for (let i in str) {
+    if (i % 2 !== 0) {
+      answer += str.charAt(i);
+    }
+  }
+
+  return answer;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -81,9 +89,7 @@ const allAnything = (strs, target) => strs.every(str => str.includes(target));
 // is removed from every course.
 // ------------------------------------------------------------------------------------------------
 
-const unenrollBrook = (roster) => {
-  // Sollution code here...
-};
+const unenrollBrook = (roster) => roster.map(course => course.filter(person => !person.includes('Brook')));
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 9
@@ -101,7 +107,17 @@ const unenrollBrook = (roster) => {
 const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 const sortByDay = (eventStrings) => {
-  // Solution code here...
+  let events = [[], [], [], [], [], [], []];
+
+  daysOfWeek.forEach(day => {
+    eventStrings.forEach(event => {
+      if (event.includes(day)) {
+        events[daysOfWeek.indexOf(day)].push(event);
+      }
+    });
+  });
+
+  return events;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -111,9 +127,7 @@ const sortByDay = (eventStrings) => {
 // the first character of the first string, the second character of the second string, etc.
 // ------------------------------------------------------------------------------------------------
 
-const characterByIndex = (strs) => {
-  // Solution code here...
-};
+const characterByIndex = (strs) => strs.map((str, i) => str.charAt(i));
 
 // ------------------------------------------------------------------------------------------------
 // TESTS
