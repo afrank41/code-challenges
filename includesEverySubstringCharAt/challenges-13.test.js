@@ -109,10 +109,10 @@ const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Sat
 const sortByDay = (eventStrings) => {
   let events = [[], [], [], [], [], [], []];
 
-  daysOfWeek.forEach(day => {
+  daysOfWeek.forEach((day, i) => {
     eventStrings.forEach(event => {
       if (event.includes(day)) {
-        events[daysOfWeek.indexOf(day)].push(event);
+        events[i].push(event);
       }
     });
   });
